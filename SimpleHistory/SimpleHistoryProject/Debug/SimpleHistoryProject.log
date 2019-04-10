@@ -1,0 +1,4 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SimpleHistoryProject.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  SimpleHistoryExample.cpp
+c:\users\mengh\dropbox\fre7831financialanalyticsbigdata\blpapi_cpp_3.8.18.1-windows\blpapi_cpp_3.8.18.1\include\blpapi_sessionoptions.h(727): error C3447: second operand to the conditional operator ?: is of type 'void', but the third operand is neither a throw-expression nor of type 'void'
+c:\users\mengh\dropbox\fre7831financialanalyticsbigdata\blpapi_cpp_3.8.18.1-windows\blpapi_cpp_3.8.18.1\include\blpapi_sessionoptions.h(778): error C3447: second operand to the conditional operator ?: is of type 'void', but the third operand is neither a throw-expression nor of type 'void'
