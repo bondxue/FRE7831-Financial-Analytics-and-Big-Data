@@ -1,0 +1,106 @@
+SessionConnectionUp = {
+    server = "localhost:8194"
+}
+
+SessionStarted = {
+    initialEndpoints[] = {
+        initialEndpoints = {
+            address = "localhost:8194"
+        }
+    }
+}
+
+ServiceOpened = {
+    serviceName = "//blp/refdata"
+}
+
+HistoricalDataResponse = {
+    securityData = {
+        security = "IBM US Equity"
+        eidData[] = {
+        }
+        sequenceNumber = 0
+        fieldExceptions[] = {
+        }
+        fieldData[] = {
+            fieldData = {
+                date = 2019-01-12
+                PX_LAST = 121.460000
+                OPEN = 121.260000
+                VOLUME = 107491319.000000
+                HIGH = 121.860000
+                LOW = 105.940000
+            }
+            fieldData = {
+                date = 2019-02-12
+                PX_LAST = 136.050000
+                OPEN = 120.510000
+                VOLUME = 119636365.000000
+                HIGH = 136.650000
+                LOW = 119.760700
+            }
+            fieldData = {
+                date = 2019-03-12
+                PX_LAST = 138.280000
+                OPEN = 136.920000
+                VOLUME = 65851921.000000
+                HIGH = 140.490000
+                LOW = 133.580000
+            }
+            fieldData = {
+                date = 2019-04-12
+                PX_LAST = 144.259900
+                OPEN = 138.050000
+                VOLUME = 72510756.000000
+                HIGH = 144.440000
+                LOW = 137.850000
+            }
+        }
+    }
+}
+
+HistoricalDataResponse = {
+    securityData = {
+        security = "MSFT US Equity"
+        eidData[] = {
+        }
+        sequenceNumber = 1
+        fieldExceptions[] = {
+        }
+        fieldData[] = {
+            fieldData = {
+                date = 2019-01-12
+                PX_LAST = 102.800000
+                OPEN = 109.580000
+                VOLUME = 930640543.000000
+                HIGH = 110.870000
+                LOW = 93.960000
+            }
+            fieldData = {
+                date = 2019-02-12
+                PX_LAST = 106.890000
+                OPEN = 101.900000
+                VOLUME = 644381867.000000
+                HIGH = 107.900000
+                LOW = 101.260000
+            }
+            fieldData = {
+                date = 2019-03-12
+                PX_LAST = 113.620000
+                OPEN = 107.500000
+                VOLUME = 447233582.000000
+                HIGH = 113.990000
+                LOW = 105.660000
+            }
+            fieldData = {
+                date = 2019-04-12
+                PX_LAST = 120.660000
+                OPEN = 114.130000
+                VOLUME = 577051221.000000
+                HIGH = 120.980000
+                LOW = 113.780000
+            }
+        }
+    }
+}
+
