@@ -56,14 +56,30 @@ int Timer::stringToSec(const std::string& str)
 	}
 }
 
-int Timer::timeIntervalIndex(const std::string& str)
+int Timer::volumeTimeIntervalIndex(const std::string& str)
 {
 	int timeNow, timeStart, timeInterval;
 	timeNow = Timer::stringToSec(str);
 	timeStart = Timer::stringToSec("09:30:00.0");
 	timeInterval = timeNow - timeStart;
-	return floor(timeInterval / 900);
+	return floor(timeInterval / 900.0); // 900s = 15min
 }
 
+int Timer::priceTimeIntervalIndex(const std::string& str)
+{
+	int timeNow, timeStart, timeInterval;
+	timeNow = Timer::stringToSec(str);
+	timeStart = Timer::stringToSec("09:30:00.0");
+	timeInterval = timeNow - timeStart;
+	if (timeInterval % 900 == 0 && timeInterval >= 0)
+	{
+		return timeInterval / 900;
+	}
+	else
+	{
+		return -1; 
+	}
+
+}
 
 

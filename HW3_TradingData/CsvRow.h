@@ -40,7 +40,7 @@ public:
 		{
 			m_data.push_back(cell);
 		}
-
+		
 		if (!lineStream && cell.empty())
 		{
 			m_data.push_back("");

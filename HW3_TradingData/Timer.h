@@ -16,7 +16,8 @@ private:
 	float ss;
 public:
 	int stringToSec(const std::string& str);
-	int timeIntervalIndex(const std::string& str);
+	int volumeTimeIntervalIndex(const std::string& str);
+	int priceTimeIntervalIndex(const std::string& str);
 
 };
 
