@@ -33,7 +33,7 @@ Complete MarketDataDB database according to the details on slides for our class 
 
 #### Databaase schema
 
-Create a relationaol database in **Microsoft Access** for market data and retrieve daily and intraday data from ** BLP API** to poplulate the data tables as follows:
+Create a relationaol database in **Microsoft Access** for market data and retrieve daily and intraday data from **BLP API** to poplulate the data tables as follows:
 1. **Markets** - contains market inform
 ![markets_tables](HW4_DataBase/images/markets.PNG)
 
