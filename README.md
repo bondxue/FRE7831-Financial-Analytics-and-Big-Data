@@ -30,3 +30,6 @@ Develop a C++ (or Python) program to use SPY_May_2012.csv for the following task
 ### homework 4: MarketDataDB database creation
 Complete MarketDataDB database according to the details on slides for our class topic BLPAPI-RDB and populate your DailyData table for stocks: GOOG, IBM, MSFT and TWTR from 1/1/2018 to 12/31/2018. 
 
+----------------------------------
+### homework 5: MapReduce Implementation 
+Modify our MapReduce.cpp for processing the attached news file, 4727.txt, to create the `word count` as shown in output.txt
