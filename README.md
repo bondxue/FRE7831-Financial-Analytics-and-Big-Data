@@ -1,5 +1,6 @@
 # FRE7831-Financial-Analytics-and-Big-Data
 
+**Keep updating..**
 
 ### homework 1: Historical data extraction from Bloomberg API
 1. Add the following fields for market data retrieval:
