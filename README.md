@@ -31,6 +31,33 @@ Develop a C++ (or Python) program to use SPY_May_2012.csv for the following task
 ### homework 4: MarketDataDB database creation
 Complete MarketDataDB database according to the details on slides for our class topic BLPAPI-RDB and populate your DailyData table for stocks: GOOG, IBM, MSFT and TWTR from 1/1/2018 to 12/31/2018. 
 
+#### Databaase schema
+
+Create a relationaol database in **Microsoft Access** for market data and retrieve daily and intraday data from ** BLP API** to poplulate the data tables as follows:
+1. **Markets** - contains market inform
+![markets_tables](images/markets.PNG)
+
+2. **Issuers** - contains issuer inform
++ *MarketID (PK), MarketName, TimeZone, Country, CurrencyCode*
+
+![issuers_tables](images/issuers.PNG)
+
+3. **Stocks** - contains stock inform
++ *Symbol (PK), Cusip, marketCap, P-Eratio, 52-Week Change, AvgVolumne*
+
+![stocks_tables](images/stocks.PNG)
+
+4. **Daily Data** - contains stock daily data inform 
++ *(TradeDate, Symbol) (PK), Open, Close, High, Low*
+![dailydata_tables](images/dailydata.PNG)
+
+
+5. **Intraday Data** - conatains stock intraday data inform 
++ *TradeTime (PK), BidPrice, BitQty, AskPrice, AskQty, TradePrice*
+
+The `Entity-Relationship Diagram` is shown as follows 
+![ER_tables](images/ER.PNG)
+
 ----------------------------------
 ### homework 5: MapReduce Implementation 
 Modify our MapReduce.cpp for processing the attached news file, 4727.txt, to create the `word count` as shown in output.txt
