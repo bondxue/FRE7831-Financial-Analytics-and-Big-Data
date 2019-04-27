@@ -27,6 +27,9 @@ Develop a C++ (or Python) program to handle large dataset `SPY_May_2012.csv` (~2
 5. We only consider the trades occurred between 9:30am to 4:00pm.
 6. Save your results in `outputs.csv` file.
 
+Python version solution using **pandas** is also added, which is much faster than C++ version solution. Neater way to handle CSV file in C++ should be used. The outputs is shown as follows:
+![hw3_outputs](HW3_BigTradingData_PythonVersion/images/outputs.PNG=100x20)
+
 ----------------------------------
 ### homework 4: MarketDataDB database creation
 Complete **MarketDataDB** database according to the details on slides for our class topic *BLPAPI-RDB* and populate your **DailyData** table for stocks: `GOOG`, `IBM`, `MSFT` and `TWTR` from 1/1/2018 to 12/31/2018. 
