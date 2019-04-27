@@ -12,7 +12,6 @@
 #include <stdio.h>
 #include <iomanip>
 
-
 using namespace std;
 
 class CsvRow

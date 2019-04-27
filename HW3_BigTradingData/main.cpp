@@ -14,13 +14,10 @@
 
 using namespace std;
 
-
-
 int main() 
 {
 	std::ifstream file("SPY_MAY_2012.csv");
 	CsvRow row;
-
 
 	string tm;
 	string strVolumne;
@@ -35,14 +32,13 @@ int main()
 	int avgVolumne[MAX_INDEX + 1] = { 0.0 };
 	float Price[MAX_INDEX + 1] = { 0.0 };
 	string Time[MAX_INDEX + 1];
-	int count = 0; // count index in Price array
+	int index = -1; // current index in Price array
 
 
 	Timer t;
 	int volumeTimeIndex;
 	int priceTimeIndex;
 	string type;
-
 
 	while (file >> row)
 	{
@@ -62,7 +58,7 @@ int main()
 		}
 
 		timeNow = row[2];
-
+		type = row[4];
 
 		if (dateNow != "21-MAY-2012")
 		{ 
@@ -72,11 +68,10 @@ int main()
 			}
 			
 			strVolumne = row[6];
-			type = row[4];
+			
 			volumeTimeIndex = t.volumeTimeIntervalIndex(timeNow);
 			//	priceTimeIndex = t.priceTimeIntervalIndex(timeNow);
-
-			
+		
 
 			if (type == "Trade")
 			{
@@ -84,62 +79,65 @@ int main()
 				vloumne = strtof(strVolumne.c_str(), NULL);
 				sumVolume[volumeTimeIndex] += vloumne;
 
-				// cout << dateNow << "  " << timeNow << "  " << type  << "     "  << strVolumne << "      " << volumeTimeIndex << "       " << sumVolume[volumeTimeIndex] << endl;
+				//cout << dateNow << "  " << timeNow << "  " << type  << "     "  << strVolumne << "      " << volumeTimeIndex << "       " << sumVolume[volumeTimeIndex] << endl;
+			}		
 
-			}
-			
 		}
 		else
 		{ 
-			 if (!t.vaildPriceTime(timeNow))
-			 {
-				 continue;
-			 }
-			 else
-			 {
-				 
-				 strPrice = row[5];
-				 Price[count] = strtof(strPrice.c_str(), NULL);
-				 Time[count] = timeNow;
-				 count++; 
-			 }	
+			if (!t.vaildPriceTime(timeNow))
+			{
+				continue;
+			}
 
+			if (type == "Trade")
+			{
+				if (t.priceTimeIntervalIndex(timeNow) != index)
+				{
+					strPrice = row[5];
+					t.priceTimeIntervalIndex(timeNow);
+					Price[t.priceTimeIntervalIndex(timeNow)] = strtof(strPrice.c_str(), NULL);
+					Time[t.priceTimeIntervalIndex(timeNow)] = timeNow;
+					index = t.priceTimeIntervalIndex(timeNow);
+				}
+
+			}
+					 		 	
 		}
 						
 	}
 
-	ofstream myfile("output.txt");
-	if (myfile.is_open())
-	{
-		for (int i = 0; i <= MAX_INDEX; i++) {
-			myfile << Time[i] << "      " << avgVolumne[i] << "      " << Price[i] << endl;
-		}
-		myfile.close();
-	}
-	else cout << "Unable to open file";
-
-
 	cout << "Done." << endl;
 
-	//cout << "===================================" << endl;
-	//for (int i = 0; i <= MAX_INDEX; i++)
-	//{
-	//	avgVolumne[i] = int(sumVolume[i] / 14.0);
-	//	cout << avgVolumne[i] <<endl;
-	//}
+	cout << "===================================" << endl;
+	for (int i = 0; i <= MAX_INDEX; i++)
+	{
+		cout << Time[i] << endl;
+	}
 
-	//cout << "===================================" << endl;
-	//for (int i = 0; i <= MAX_INDEX; i++)
-	//{
-	//	avgPrice[i] = int(sumPrice[i] / 14.0);
-	//	cout << avgPrice[i] << endl;
-	//}
-	
+	cout << "===================================" << endl;
+	for (int i = 0; i <= MAX_INDEX; i++)
+	{
+		avgVolumne[i] = int(sumVolume[i] / 14.0);
+		cout << avgVolumne[i] <<endl;
+	}
 
 
-	//Timer t;
-	//std::cout << t.timeIntervalIndex("8:01:01.1") << std::endl;
+	cout << "===================================" << endl;
+	for (int i = 0; i <= MAX_INDEX; i++)
+	{
+		cout << Price[i] << endl;
+	}
 
+	fstream myfile;
+	//writefile
+	myfile.open("outputs.csv", 'w');
+	myfile << "Time" << "," << "Quantity" << "," << "Price" << endl;
+	for (int i = 0; i < MAX_INDEX; i++)
+	{
+		myfile << Time[i] << "," << avgVolumne[i] << "," << Price[i] << endl;
+	}
+	myfile.close();
 
 	system("Pause");
 	return 0;

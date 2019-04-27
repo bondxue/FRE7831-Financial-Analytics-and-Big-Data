@@ -69,7 +69,7 @@ int Timer::priceTimeIntervalIndex(const std::string& str)
 	int timeStart = Timer::stringToSec("09:30:00.0");
 	int timeInterval = timeNow - timeStart;
 
-	if (timeInterval % 900 == 0)
+	if (timeInterval % 900 == 0 && (timeNow - timeStart) >= 0 && (timeNow - timeStart) < 23400)
 	{
 		return timeInterval / 900;
 	}
