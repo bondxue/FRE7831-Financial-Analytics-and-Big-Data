@@ -18,6 +18,8 @@ public:
 	int stringToSec(const std::string& str);
 	int volumeTimeIntervalIndex(const std::string& str);
 	int priceTimeIntervalIndex(const std::string& str);
+	bool vaildTVolumeTime(const std::string& str); 
+	bool vaildPriceTime(const std::string& str); 
 
 };
 

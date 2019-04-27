@@ -58,26 +58,54 @@ int Timer::stringToSec(const std::string& str)
 
 int Timer::volumeTimeIntervalIndex(const std::string& str)
 {
-	int timeNow, timeStart, timeInterval;
-	timeNow = Timer::stringToSec(str);
-	timeStart = Timer::stringToSec("09:30:00.0");
-	timeInterval = timeNow - timeStart;
-	return floor(timeInterval / 900.0); // 900s = 15min
+	int timeNow = Timer::stringToSec(str);
+	int timeStart = Timer::stringToSec("09:30:00.0");
+	return floor((timeNow - timeStart)/ 900.0); // 900s = 15min
 }
 
 int Timer::priceTimeIntervalIndex(const std::string& str)
 {
-	int timeNow, timeStart, timeInterval;
-	timeNow = Timer::stringToSec(str);
-	timeStart = Timer::stringToSec("09:30:00.0");
-	timeInterval = timeNow - timeStart;
-	if (timeInterval % 900 == 0 && timeInterval >= 0)
+	int timeNow = Timer::stringToSec(str);
+	int timeStart = Timer::stringToSec("09:30:00.0");
+	int timeInterval = timeNow - timeStart;
+
+	if (timeInterval % 900 == 0)
 	{
 		return timeInterval / 900;
 	}
 	else
 	{
 		return -1; 
+	}
+
+}
+
+bool Timer::vaildPriceTime(const std::string& str)
+{
+	int timeNow = Timer::stringToSec(str);
+	int timeStart = Timer::stringToSec("09:30:00.0");
+	if ((timeNow - timeStart) % 900 == 0 && (timeNow - timeStart) >= 0 && (timeNow - timeStart) < 23400)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
+}
+
+bool Timer::vaildTVolumeTime(const std::string& str)
+{
+	int timeNow = Timer::stringToSec(str);
+	int timeStart = Timer::stringToSec("09:30:00.0");
+	if ((timeNow - timeStart) >= 0 && (timeNow - timeStart) < 23400) // time btween 9:30 am and 4:00 pm
+	{
+		return true;
+	}
+	else
+	{
+		return false;
 	}
 
 }
