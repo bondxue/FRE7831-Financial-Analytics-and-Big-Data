@@ -28,7 +28,9 @@ Develop a C++ (or Python) program to handle large dataset `SPY_May_2012.csv` (~2
 6. Save your results in `outputs.csv` file.
 
 Python version solution using **pandas** is also added, which is much faster than C++ version solution. Neater way to handle CSV file in C++ should be used. The outputs is shown as follows:
-![hw3_outputs](HW3_BigTradingData_PythonVersion/images/outputs.PNG=100x20)
+
+<img src="https://github.com/bondxue/FRE7831-Financial-Analytics-and-Big-Data/blob/master/HW3_BigTradingData_PythonVersion/images/outputs.PNG" width="250">
+
 
 ----------------------------------
 ### homework 4: MarketDataDB database creation
