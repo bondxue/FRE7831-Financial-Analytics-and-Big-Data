@@ -15,7 +15,8 @@
 1. Retrieve Ask side of real-time quotes: ask price and ask size of each quote.
 2. Write the *real-time* data you collect into a file in addition to what shown on screen.
 
-![realtime data](images/realtime.PNG)
+<img src="https://github.com/bondxue/FRE7831-Financial-Analytics-and-Big-Data/blob/master/HW2_RealTime/images/realtime.PNG" width="800">
+
 
 ----------------------------------
 ### homework 3: Trading data handling 
