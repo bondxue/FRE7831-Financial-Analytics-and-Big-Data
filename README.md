@@ -62,5 +62,11 @@ The `Entity-Relationship Diagram` is shown as follows
 ![ER_tables](HW4_DataBase/images/ER.PNG)
 
 ----------------------------------
-### homework 5: MapReduce Implementation 
-Modify our `MapReduce.cpp` for processing the attached news file, `4727.txt`, to create the `word count` as shown in `output.txt`
+### homework 5: WordCount Implementation using MapReduce 
+Modify `MapReduce.cpp` for processing the attached news file, `4727.txt` with file partial display:
+
+<img src="https://github.com/bondxue/FRE7831-Financial-Analytics-and-Big-Data/blob/master/HW5_MapReduce/images/input.PNG" width="700">
+
+to create the **word count** as shown in `output.txt` with file partial display:
+
+<img src="https://github.com/bondxue/FRE7831-Financial-Analytics-and-Big-Data/blob/master/HW5_MapReduce/images/output.PNG" width="150">
