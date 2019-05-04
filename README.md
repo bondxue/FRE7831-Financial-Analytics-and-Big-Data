@@ -71,3 +71,58 @@ Modify `MapReduce.cpp` for processing the attached news file, `4727.txt` with fi
 to create the **word count** as shown in `output.txt` with file partial display:
 
 <img src="https://github.com/bondxue/FRE7831-Financial-Analytics-and-Big-Data/blob/master/HW5_MapReduce/images/output.PNG" width="150">
+
+----------------------------------
+### homework 6: 
+1. Create Virtual Machine for **Hornworks Sandbox** in **Microsoft Azure**. 
+2. Load raw data `stocks.zip` file into *Hadoop File System*. 
+3. Create tables `price_data`, `dividends_data` and `yearly_aggregates` in the default database.
+
+```SQL
+create external table price_data 
+(stock_exchange string, symbol string, trade_date string, open float, 
+high float, low float, close float, volume int, adj_close float) 
+row format delimited fields terminated by ',' 
+stored as textfile location '/user/hue/stocks/stocks/prices';
+
+create external table dividends_data 
+(stock_exchange string, symbol string, trade_date string, dividend float) 
+row format delimited fields terminated by ',' 
+stored as textfile location '/user/hue/stocks/stocks/dividends';
+
+create table yearly_aggregates 
+(symbol string, year string, high float, low float, 
+average_close float, total_dividends float)
+row format delimited fields terminated by ',' 
+stored as textfile location '/user/hue/stocks/stocks/stock_aggregates';
+```
+4. Populate Table `yearly_aggregates` and verify 
+```SQL
+insert overwrite table yearly_aggregates 
+select a.symbol, year(a.trade_date), max(a.high), min(a.low), avg(a.close), sum(b.dividend) 
+from price_data a 
+left outer join dividends_data b 
+on (a.symbol = b.symbol and a.trade_date = b.trade_date) 
+group by a.symbol, year(a.trade_date);
+
+select * from yearly_aggregates where symbol = 'IBM';
+```
+5. Connect **HDP VM** with a Python program via **ODBC**
+
+6. Connect your Python program to your **Hortonworks database** in **Azure** to pull `IBM yearly dividend` from `yearly_aggregates` table
+```PYTHON
+import pyodbc
+
+pyodbc.autocommit = True
+conn = pyodbc.connect("DSN=Sample Hortonworks Hive DSN;", autocommit=True)
+cursor = conn.cursor();
+cursor.execute("select year, symbol, total_dividends from default.yearly_aggregates where symbol = 'IBM' and year = '2005'")
+result = cursor.fetchall() 
+for r in result:
+    print(r)
+```
+Result is:
+```
+('2005', 'IBM', 0.7800000309944153)
+```
+
