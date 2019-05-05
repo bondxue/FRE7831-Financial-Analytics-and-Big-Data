@@ -111,7 +111,7 @@ select * from yearly_aggregates where symbol = 'IBM';
 
 5. Connect **HDP VM** with a Python program via **ODBC**
 
-6. Connect your Python program to your **Hortonworks database** in **Azure** to pull `IBM yearly dividend` from `yearly_aggregates` table
+6. Connect my Python program to **Hortonworks database** in **Azure** to pull `IBM yearly dividend` from `yearly_aggregates` table
 ```PYTHON
 import pyodbc
 
