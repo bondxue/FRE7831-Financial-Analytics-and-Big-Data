@@ -1,7 +1,10 @@
 # FRE7831-Financial-Analytics-and-Big-Data
 
-**Keep updating..**
+The course covers a number of themes and practical problems that combine
+computer aided *data management*, *data analysis*, *financial issues* and their *applications* in a data
+based financial environment.
 
+---------------------------------
 ## homework 1: Historical data extraction from Bloomberg API
 1. Add the following fields for market data retrieval:
   + `Daily Volume`
