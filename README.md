@@ -107,6 +107,8 @@ group by a.symbol, year(a.trade_date);
 
 select * from yearly_aggregates where symbol = 'IBM';
 ```
+<img src="https://github.com/bondxue/FRE7831-Financial-Analytics-and-Big-Data/blob/master/HW6_DataPullingFromCloud/images/verifysql.PNG" width="700">
+
 5. Connect **HDP VM** with a Python program via **ODBC**
 
 6. Connect your Python program to your **Hortonworks database** in **Azure** to pull `IBM yearly dividend` from `yearly_aggregates` table
