@@ -2,7 +2,7 @@
 
 **Keep updating..**
 
-### homework 1: Historical data extraction from Bloomberg API
+## homework 1: Historical data extraction from Bloomberg API
 1. Add the following fields for market data retrieval:
   + `Daily Volume`
   + `High Price`
@@ -11,7 +11,7 @@
 3. Write the historical data you collect into a file instead of on screen
 ---------------------------------
 
-### homework 2: Real-time data extraction from Bloomberg API
+## homework 2: Real-time data extraction from Bloomberg API
 1. Retrieve Ask side of real-time quotes: ask price and ask size of each quote.
 2. Write the *real-time* data you collect into a file in addition to what shown on screen.
 
@@ -19,7 +19,7 @@
 
 
 ----------------------------------
-### homework 3: Trading data handling 
+## homework 3: Trading data handling 
 Develop a C++ (or Python) program to handle large dataset `SPY_May_2012.csv` (~2G) for the following tasks:
 1. Use only the trade quantities and their corresponding prices. We will not consider any quote.
 2. For intraday day, we combine trading quantities into each 15min interval according to the timestamp of each trade.
@@ -34,7 +34,7 @@ Python version solution using **pandas** is also added, which is much faster tha
 
 
 ----------------------------------
-### homework 4: MarketDataDB database creation
+## homework 4: MarketDataDB database creation
 Complete **MarketDataDB** database according to the details on slides for our class topic *BLPAPI-RDB* and populate your **DailyData** table for stocks: `GOOG`, `IBM`, `MSFT` and `TWTR` from 1/1/2018 to 12/31/2018. 
 
 #### Databaase schema
@@ -63,7 +63,7 @@ The `Entity-Relationship Diagram` is shown as follows
 ![ER_tables](HW4_DataBase/images/ER.PNG)
 
 ----------------------------------
-### homework 5: WordCount Implementation using MapReduce 
+## homework 5: WordCount Implementation using MapReduce 
 Modify `MapReduce.cpp` for processing the attached news file, `4727.txt` with file partial display:
 
 <img src="https://github.com/bondxue/FRE7831-Financial-Analytics-and-Big-Data/blob/master/HW5_MapReduce/images/input.PNG" width="700">
@@ -73,8 +73,8 @@ to create the **word count** as shown in `output.txt` with file partial display:
 <img src="https://github.com/bondxue/FRE7831-Financial-Analytics-and-Big-Data/blob/master/HW5_MapReduce/images/output.PNG" width="150">
 
 ----------------------------------
-### homework 6: 
-1. Create Virtual Machine for **Hornworks Sandbox** in **Microsoft Azure**. 
+## homework 6: Data Storage and Processing using Cloud 
+1. Create Virtual Machine for **Hornworks Sandbox** in **Microsoft Azure** cloud computing platform.
 2. Load raw data `stocks.zip` file into *Hadoop File System*. 
 3. Create tables `price_data`, `dividends_data` and `yearly_aggregates` in the default database.
 
