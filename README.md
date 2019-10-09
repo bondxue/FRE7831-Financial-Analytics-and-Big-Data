@@ -1,5 +1,8 @@
 # FRE7831-Financial-Analytics-and-Big-Data
 
+
+[![Project passed](https://img.shields.io/badge/project-passed-success.svg)](https://img.shields.io/badge/project-passed-success.svg)
+
 The course covers a number of themes and practical problems that combine
 computer aided *data management*, *data analysis*, *financial issues* and their *applications* in a data
 based financial environment.
